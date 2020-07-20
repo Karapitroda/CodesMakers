@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.app.codesmakers.ui.home.HomeViewModel" />
+    </data>
+
+    <com.app.codesmakers.utils.customviews.CustomNestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:id="@+id/linear_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/text_new"
+                style="@style/Widget.CodeMakers.TextView.FootNote.Primary"
+                android:layout_gravity="start"
+                android:fontFamily="@font/opensans_semibold"
+                android:gravity="center"
+                android:paddingLeft="@dimen/_10sdp"
+                android:paddingTop="@dimen/_10sdp"
+                android:paddingRight="@dimen/_10sdp"
+                android:text="@string/new_str"
+                android:textAllCaps="true" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/text_advertisement"
+                style="@style/Widget.CodeMakers.TextView.Body.Black"
+                android:layout_gravity="start"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:fontFamily="@font/opensans_semibold"
+                android:gravity="center"
+                android:paddingLeft="@dimen/_10sdp"
+                android:paddingRight="@dimen/_10sdp"
+                android:text="@string/advertisement" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_207sdp"
+                android:background="@color/table_bg_color"
+                android:minHeight="@dimen/_207sdp">
+
+
+                <com.smarteist.autoimageslider.SliderView
+                    android:id="@+id/recycler_view_advertisement"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:sliderAnimationDuration="600"
+                    app:sliderAutoCycleDirection="back_and_forth"
+                    app:sliderAutoCycleEnabled="true"
+                    app:sliderIndicatorAnimationDuration="600"
+                    app:sliderIndicatorEnabled="false"
+                    app:sliderIndicatorGravity="center_horizontal|bottom"
+                    app:sliderScrollTimeInSec="1"
+                    android:paddingLeft="@dimen/_15sdp"
+                    android:paddingRight="@dimen/_15sdp"
+                    android:clipToPadding="true"
+                    app:sliderStartAutoCycle="true" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_place_advertisement"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_207sdp"
+                    android:fontFamily="@font/opensans_semibold"
+                    android:gravity="center"
+                    android:padding="@dimen/_15sdp"
+                    android:text="@string/no_ads" />
+            </RelativeLayout>
+
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_10sdp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/text_store_with_you"
+                    style="@style/Widget.CodeMakers.TextView.Body.Black"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/opensans_semibold"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:paddingRight="@dimen/_10sdp"
+                    android:text="@string/stores_for_you" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/seel_all_tv"
+                    style="@style/Widget.CodeMakers.TextView.FootNote.Primary"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/opensans_semibold"
+                    android:padding="@dimen/_10sdp"
+                    android:text="@string/see_all" />
+
+            </RelativeLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_7sdp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/table_bg_color">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view_stores"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/table_bg_color" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_place_store"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/opensans_semibold"
+                    android:gravity="center"
+                    android:padding="@dimen/_15sdp"
+                    android:text="@string/no_store" />
+            </RelativeLayout>
+        </LinearLayout>
+
+    </com.app.codesmakers.utils.customviews.CustomNestedScrollView>
+
+</layout>

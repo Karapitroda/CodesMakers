@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.app.codesmakers.ui.orderdetails.OrderDetailsActivity">
+    <item
+        android:id="@+id/menu_user_image"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_user_placeholder"
+        android:title="@string/title_account"
+        app:showAsAction="ifRoom" />
+</menu>

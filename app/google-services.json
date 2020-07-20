@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "220572949224",
+    "firebase_url": "https://codemakers-52ba0.firebaseio.com",
+    "project_id": "codemakers-52ba0",
+    "storage_bucket": "codemakers-52ba0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:220572949224:android:67927a1fea06ff4537875d",
+        "android_client_info": {
+          "package_name": "com.app.codesmakers"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "220572949224-d1uehnqmgg36k7mas4o8im0cpo86d7c0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9O1jrggyhT2mz4FxEKIPxX67bxYeMHjA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "220572949224-d1uehnqmgg36k7mas4o8im0cpo86d7c0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

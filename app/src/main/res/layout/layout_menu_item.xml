@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="imageUrl"
+            type="String" />
+
+        <variable
+            name="model"
+            type="com.app.codesmakers.api.pojo.menu.MenuModel" />
+
+        <import
+            alias="v"
+            type="android.view.View" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_1sdp"
+            app:cardBackgroundColor="@color/table_cell_bg_color"
+            app:cardCornerRadius="@dimen/_1sdp">
+
+            <LinearLayout
+                android:id="@+id/grid_layout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_55sdp"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="@dimen/_55sdp"
+                    android:layout_height="@dimen/_55sdp"
+                    android:paddingLeft="@dimen/_5sdp"
+                    android:paddingRight="@dimen/_5sdp">
+
+                    <ProgressBar
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_centerInParent="true" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/store_image"
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/bg_circle_grey"
+                        android:scaleType="centerCrop"
+                        tools:ignore="UnusedAttribute" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_middle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/title_tv"
+                        style="@style/Widget.CodeMakers.TextView.Content.Black"
+                        android:layout_gravity="start"
+                        android:fontFamily="@font/opensans_semibold"
+                        android:text="@{model.name}" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/sub_title_tv"
+                        style="@style/Widget.CodeMakers.TextView.Small.Grey"
+                        android:layout_gravity="start"
+                        android:fontFamily="@font/opensans_semibold"
+                        android:text="@{`$`+model.price}" />
+
+                </LinearLayout>
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/fab_add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:visibility="@{model.isAdded ? v.GONE : v.VISIBLE}"
+                    app:fabSize="mini"
+                    app:srcCompat="@drawable/ic_add"
+                    app:useCompatPadding="true" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/cancel_action"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:padding="@dimen/_4sdp"
+                    android:visibility="@{model.isAdded ? v.VISIBLE : v.GONE}"
+                    app:srcCompat="@drawable/ic_close" />
+
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+</layout>

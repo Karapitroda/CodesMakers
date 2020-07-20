@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:model="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="model"
+            type="com.app.codesmakers.ui.trackorder.TrackOrderVM" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_bottom_sheet"
+        android:minHeight="@dimen/_270sdp"
+        android:orientation="vertical"
+        app:behavior_hideable="false"
+        app:behavior_peekHeight="@dimen/_minus1sdp"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_10sdp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/courier_image"
+                android:layout_width="@dimen/_33sdp"
+                android:layout_height="@dimen/_33sdp"
+                android:background="@drawable/bg_circle_grey"
+                android:padding="@dimen/_2sdp"
+                model:carrier_pic="@{model.currentJobObsv.courierPicture}" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/courier_name_tv"
+                style="@style/Widget.CodeMakers.TextView.Body.Black"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:fontFamily="@font/opensans_semibold"
+                android:text="@{model.currentJobObsv.courierName}" />
+
+        </LinearLayout>
+
+
+
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_20sdp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_42sdp"
+            android:gravity="center">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/duration_tv"
+                style="@style/Widget.CodeMakers.TextView.Button"
+                android:layout_width="wrap_content"
+                android:fontFamily="@font/opensans_semibold"
+                android:maxWidth="@dimen/_80sdp"
+                android:maxLines="1"
+                android:text="@{model.currentJobObsv.duration == null || model.currentJobObsv.duration.empty ? `n/a` : model.currentJobObsv.duration}" />
+
+            <Space
+                android:layout_width="@dimen/_15sdp"
+                android:layout_height="match_parent" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/distance_tv"
+                style="@style/Widget.CodeMakers.TextView.Button"
+                android:layout_width="wrap_content"
+                android:fontFamily="@font/opensans_semibold"
+                android:text="@{model.currentJobObsv.distance == null || model.currentJobObsv.distance.empty ? `n/a` : model.currentJobObsv.distance}" />
+
+            <Space
+                android:layout_width="@dimen/_15sdp"
+                android:layout_height="match_parent" />
+
+
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_10sdp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/delivery_cost"
+            style="@style/Widget.CodeMakers.TextView.Body.Black"
+            android:layout_gravity="center"
+            android:fontFamily="@font/opensans_semibold"
+            android:text="@{@string/delivery_cost+':'+model.currentJobObsv.price }" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_10sdp" />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_10sdp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            style="@style/Widget.CodeMakers.TextView.Button.Blue"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_send_feedback"
+            android:layout_marginLeft="@dimen/_3sdp"
+            android:layout_marginRight="@dimen/_3sdp"
+            android:onClick="@{model::onPayBillClicked}"
+            android:text="@string/pay_bill" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_30sdp" />
+
+    </LinearLayout>
+
+</layout>

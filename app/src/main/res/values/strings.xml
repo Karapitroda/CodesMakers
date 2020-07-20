@@ -1,0 +1,173 @@
+<resources>
+    <string name="app_name">CodesMakers</string>
+    <string name="title_stores">Stores</string>
+    <string name="title_home">Home</string>
+    <string name="title_orders">MyOrders</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_courier">Requests for delivery</string>
+    <string name="title_becourier">Be Courier</string>
+
+    <!--No Data Error-->
+    <string name="no_notification">No notifications yet</string>
+    <string name="no_store">in your location no any store availabel</string>
+    <string name="no_ads">no any advertisement availabel</string>
+    <string name="no_order">You have no orders</string>
+    <string name="no_delivery">You have not any request for delivery</string>
+
+    <string name="connection_error">Sorry! Please connect internet to continue using this application.</string>
+    <string name="step">Step</string>
+
+    <string name="large_text">
+        "Material is the metaphor.\n\n"
+
+        "A material metaphor is the unifying theory of a rationalized space and a system of motion."
+        "The material is grounded in tactile reality, inspired by the study of paper and ink, yet "
+        "technologically advanced and open to imagination and magic.\n"
+        "Surfaces and edges of the material provide visual cues that are grounded in reality. The "
+        "use of familiar tactile attributes helps users quickly understand affordances. Yet the "
+        "flexibility of the material creates new affordances that supercede those in the physical "
+        "world, without breaking the rules of physics.\n"
+        "The fundamentals of light, surface, and movement are key to conveying how objects move, "
+        "interact, and exist in space and in relation to each other. Realistic lighting shows "
+        "seams, divides space, and indicates moving parts.\n\n"
+
+    </string>
+    <string name="action_settings">Settings</string>
+
+    <!--Installing-->
+    <string name="installation_settings_please_wait">Installation settings\nplease wait…</string>
+
+    <!--Language-->
+    <string name="select_language">Select Language</string>
+    <string name="language_arabic">Arabic</string>
+    <string name="language_english">English</string>
+
+    <!--Agreement-->
+    <string name="accepting_terms">Accepting Terms</string>
+    <string name="accepting_terms_context">By using this app you have to accept Terms &amp; Conditions.</string>
+    <string name="accepting_terms_erros">Please accept to continue…</string>
+    <string name="read_terms">Read terms</string>
+    <string name="accept">Accept</string>
+
+    <!--Login-->
+    <string name="your_phone_number">Your Phone Number</string>
+    <string name="phone_number_context">Enter your phone number to activate your account.</string>
+    <string name="cancel">Cancel</string>
+    <string name="next">Next</string>
+    <string name="skip">Skip</string>
+    <string name="start">Start</string>
+    <string name="activation_code">Activation Code</string>
+    <string name="activation_code_context">Enter your activation code that sent to your phone by SMS.</string>
+    <string name="hint_number">Mobile number</string>
+    <string name="hint_code">Enter code</string>
+
+    <!--How to use-->
+    <string name="how_to_use_the_app">How to use the app</string>
+
+    <!--Home-->
+    <string name="new_str">New</string>
+    <string name="advertisement">Advertisement</string>
+    <string name="stores_for_you">Stores For You</string>
+    <string name="see_all">See all</string>
+
+    <!--User Account-->
+    <string name="title_account">Personal Settings</string>
+    <string name="account_balance">Account Balance</string>
+    <string name="number_of_orders">Number Of Orders</string>
+    <string name="number_of_delivery">Number Of Delivery</string>
+    <string name="user_feedback">User Feedback</string>
+    <string name="my_fav">My Favorite</string>
+    <string name="language">Language</string>
+    <string name="terms">Terms &amp; Conditions</string>
+    <string name="about_the_app">About</string>
+
+    <!--User Feedack-->
+    <string name="users_feedback">Users Feedback</string>
+    <string name="favorite_places">MyFavorite Places</string>
+    <string name="action">Action</string>
+    <string name="delete">Delete</string>
+    <string name="this_order_complted">This order is completed</string>
+    <string name="this_order_cancelled">This order is cancelled</string>
+    <string name="this_order_is_assigned">This order is assigned to someone else!</string>
+    <string name="ok">OK</string>
+
+    <!--Store Details-->
+    <string name="store_name">Store Name</string>
+    <string name="delivery_duration">Delivery Duration</string>
+    <string name="your_location">Your Location</string>
+    <string name="coupon">Coupon</string>
+    <string name="list_of_favorite_locations">List of favorite locations</string>
+    <string name="add_to_favorites">Add to favorites</string>
+    <string name="location_name">Location Name</string>
+    <string name="enter_location_name">Enter location name</string>
+    <string name="please_enter_location_name">Please enter location name</string>
+    <string name="add">Add</string>
+    <string name="please_add_location">Please press long to add location.</string>
+
+    <!--Order-->
+    <string name="my_orders">My Orders</string>
+    <string name="applied_oders">Applied</string>
+    <string name="details">Details:</string>
+    <string name="add_item">Add Item</string>
+    <string name="order_details">Order Details</string>
+    <string name="order_summary">Order Summary</string>
+    <string name="enter_details">Enter Details:</string>
+    <string name="write_here">Write here…</string>
+    <string name="price">Price:</string>
+    <string name="no_items">No items selected</string>
+    <string name="enter_description">Please enter details</string>
+
+    <!--Track Order Customer Side-->
+    <string name="waiting_couriers">Waiting Couriers</string>
+    <string name="cancel_order">Cancel Order</string>
+    <string name="hint_type_here">Type here…</string>
+    <string name="status_post_bill">Post Bill</string>
+    <string name="status_order_delivered">Order Delivered</string>
+    <string name="status_deliver_order">Deliver Order</string>
+    <string name="call_store">Call Store</string>
+    <string name="call_carrier">Call Carrier</string>
+    <string name="chat_with_carrier">Chat With Carrier</string>
+    <string name="add_comment">Add Comment</string>
+    <string name="complete_the_order">Complete the order</string>
+    <string name="send_feedback">Send Feedback</string>
+    <string name="pay_bill">Pay Bill</string>
+    <string name="delivery_cost">Delivery cost</string>
+    <string name="timer">Timer</string>
+    <string name="cancel_order_ask">Cancel Order?</string>
+    <string name="are_you_sure">Are you sure you want to cancel the order?</string>
+    <!--Chat-->
+    <string name="chat_with">Chat With </string>
+    <string name="options">Options</string>
+    <string name="option_send_image">Send Image</string>
+    <string name="option_image_complaint">Image Complaint</string>
+    <string name="option_post_bill">Post Bill</string>
+
+    <!--Apply Carrier Side-->
+    <string name="cancel_order_offer">Cancel your offer (%s)</string>
+    <string name="waiting_customer">Waiting Customer Approval</string>
+    <string name="chat_with_customer">Chat With Customer</string>
+    <string name="call_customer">Call Customer</string>
+    <string name="confirm_delivered">Order delivered?</string>
+    <string name="confirm_delivered_content">Confirmation for the delivery?</string>
+    <string name="confirm">Confirm</string>
+    <string name="post_offer">Post Offer</string>
+    <string name="provide_rating">Please provide rating!</string>
+    <string name="select_offer_price">Please select offer price!</string>
+    <string name="field_can_not_be_empty">Field can not be empty!</string>
+
+    <!--Comment-->
+    <string name="comment_title">Comment</string>
+    <string name="post">Post</string>
+
+    <!--Update Profile-->
+    <string name="title_account_update">Update Profile</string>
+    <string name="name">Name</string>
+    <string name="hint_email">Email address</string>
+    <string name="hint_language">Language</string>
+    <string name="update">Update</string>
+    <string name="change_number">Change Phone</string>
+    <string name="verify">Verify</string>
+    <string name="customer_rate">Customer rate</string>
+    <string name="resend_in">Resend in</string>
+
+</resources>

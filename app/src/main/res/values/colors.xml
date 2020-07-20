@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FAF8F8</color>
+    <color name="colorPrimaryDark">@color/action_bar_bg_color</color>
+    <color name="colorAccent">@color/app_tint_color</color>
+    <color name="transparent">#00000000</color>
+
+    <color name="appWhite">#FFFFFF</color>
+    <color name="transparentBlack">#80000000</color>
+    <color name="colorLightGrey">#DDD9D9</color>
+
+    <!--App-->
+    <color name="app_bg_color">#FAF8F8</color>
+    <color name="app_tint_color">#007AFF</color>
+    <color name="action_bar_bg_color">#C8C9C9</color>
+    <color name="action_bar_text_color">@color/text_heading_color</color>
+    <color name="icons_tint_color">#70000000</color>
+
+    <!--Card Backgrounds-->
+    <color name="card_bg_color">#ffffff</color>
+
+    <!--Lists-->
+    <color name="table_bg_color">#ffffff</color>
+    <color name="table_cell_bg_color">#ffffff</color>
+
+    <!--Dialogs/Popups Backgrounds-->
+    <color name="dialog_bg_color">#ffffff</color>
+
+    <!--Texts-->
+    <color name="text_heading_color">#000000</color>
+    <color name="text_subheading_color">#7E7D7D</color>
+    <color name="text_content_color">#504F4F</color>
+    <color name="text_button_color">#007AFF</color>
+
+    <!--Stroke-->
+    <color name="light_stroke_color">#DDD9D9</color>
+    <color name="tint_stroke_color">#007AFF</color>
+
+    <!--EditTexts/InputFields-->
+    <color name="edittext_bg_color">#ffffff</color>
+    <color name="edittext_text_color">#000000</color>
+    <color name="edittext_placeholder_color">#969595</color>
+    <color name="search_bg_color">#E7E6E6</color>
+
+    <!--Tabs-->
+    <color name="main_tab_normal_bg_color">#FAF8F8</color>
+    <color name="order_tab_normal_ng_color">#fff</color>
+    <color name="order_tab_normal_color">@color/app_tint_color</color>
+    <color name="order_tab_selected_color">#ffffff</color>
+
+    <color name="tab_bg_color">#FAF8F8</color>
+    <color name="tab_selected_bg_color">#007AFF</color>
+    <color name="tab_normal_bg_color">#FAF8F8</color>
+    <color name="tab_normal_color">#969595</color>
+    <color name="tab_selected_color">#007AFF</color>
+
+    <!--Chat-->
+    <color name="chat_user_bg_color">@color/app_tint_color</color>
+    <color name="chat_user_text_color">#fff</color>
+    <color name="chat_other_user_bg_color">#DDD9D9</color>
+    <color name="chat_other_text_color">#0C0C0C</color>
+
+    <!--Buttons-->
+    <color name="button_red_bg">#D50000</color>
+    <color name="button_blue_bg">#007AFF</color>
+    <color name="button_green_bg">#56D142</color>
+    <color name="button_yellow_bg">#FFD600</color>
+    <color name="button_grey_bg">#EFEFF4</color>
+    <color name="button_nobg_bg">#00000000</color>
+    <color name="button_orange_bg">#E56A2C</color>
+
+    <color name="button_green_text_color">#FFFFFF</color>
+    <color name="button_yellow_text_color">#FFFFFF</color>
+    <color name="button_red_text_color">#FFFFFF</color>
+    <color name="button_blue_text_color">#FFFFFF</color>
+    <color name="button_grey_text_color">#007AFF</color>
+    <color name="button_nobg_text_color">#007AFF</color>
+
+</resources>

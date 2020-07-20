@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="app_languages">
+        <item>English</item>
+        <item>Arabic</item>
+    </string-array>
+    <string-array name="app_languages_suffix">
+        <item>en</item>
+        <item>ar</item>
+    </string-array>
+
+    <string-array name="WheelHoursArray">
+        <item>1 Hr.</item>
+        <item>2 Hr.</item>
+        <item>3 Hr.</item>
+        <item>4 Hr.</item>
+        <item>5 Hr.</item>
+        <item>6 Hr.</item>
+        <item>7 Hr.</item>
+        <item>8 Hr.</item>
+        <item>9 Hr.</item>
+        <item>10 Hr.</item>
+        <item>11 Hr.</item>
+        <item>12 Hr.</item>
+        <item>13 Hr.</item>
+        <item>14 Hr.</item>
+        <item>15 Hr.</item>
+        <item>16 Hr.</item>
+        <item>17 Hr.</item>
+        <item>18 Hr.</item>
+        <item>19 Hr.</item>
+        <item>20 Hr.</item>
+        <item>21 Hr.</item>
+        <item>22 Hr.</item>
+        <item>23 Hr.</item>
+        <item>24 Hr.</item>
+    </string-array>
+</resources>

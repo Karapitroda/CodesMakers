@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="imageUrl"
+            type="String" />
+
+        <variable
+            name="model"
+            type="com.app.codesmakers.api.pojo.carriers.CarrierModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_1sdp"
+            app:cardBackgroundColor="@color/table_cell_bg_color"
+            app:cardCornerRadius="@dimen/_1sdp">
+
+            <RelativeLayout
+                android:id="@+id/grid_layout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_55sdp"
+                android:layout_gravity="center">
+
+                <RelativeLayout
+                    android:id="@+id/rl_image"
+                    android:layout_width="@dimen/_55sdp"
+                    android:layout_height="@dimen/_55sdp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:paddingLeft="@dimen/_5sdp"
+                    android:paddingRight="@dimen/_5sdp">
+
+                    <ProgressBar
+                        android:layout_width="@dimen/_45sdp"
+                        android:layout_height="@dimen/_45sdp"
+                        android:layout_centerInParent="true" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/store_image"
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_centerInParent="true"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/ic_store_placeholder"
+                        tools:ignore="UnusedAttribute" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_toEndOf="@+id/rl_image"
+                    android:gravity="start"
+                    android:orientation="vertical"
+                    android:paddingEnd="@dimen/_5sdp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/store_name_tv"
+                        style="@style/Widget.CodeMakers.TextView.Content.Black"
+                        android:layout_gravity="start"
+                        android:fontFamily="@font/opensans_semibold"
+                        android:text="@{model.storeName}" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/content_tv"
+                        style="@style/Widget.CodeMakers.TextView.Small.Grey"
+                        android:layout_gravity="start"
+                        android:fontFamily="@font/opensans_semibold"
+                        android:text="@{model.content}" />
+
+                </LinearLayout>
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+</layout>

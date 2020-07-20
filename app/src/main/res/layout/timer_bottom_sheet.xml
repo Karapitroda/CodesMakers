@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:model="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.app.codesmakers.ui.trackorder.TrackOrderVM" />
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_bottom_sheet"
+        android:minHeight="@dimen/_250sdp"
+        android:orientation="vertical"
+        app:behavior_hideable="false"
+        app:behavior_peekHeight="@dimen/_minus1sdp"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/image_store"
+                android:layout_width="@dimen/_33sdp"
+                android:layout_height="@dimen/_33sdp"
+                app:srcCompat="@drawable/ic_store_placeholder"
+                model:store_pic="@{model.currentJobObsv.storePic}" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/store_name_tv"
+                    style="@style/Widget.CodeMakers.TextView.Body.Black"
+                    android:layout_gravity="start"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:layout_marginRight="@dimen/_5sdp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/opensans_semibold"
+                    android:maxLines="1"
+                    android:text="@{model.currentJobObsv.storeName}" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/store_loc_tv"
+                    style="@style/Widget.CodeMakers.TextView.Content.Grey"
+                    android:layout_gravity="start"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:layout_marginRight="@dimen/_5sdp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/opensans_semibold"
+                    android:maxLines="2"
+                    android:text="@{model.currentJobObsv.storeLocStr}" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_10sdp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_15sdp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/call_store_btn"
+                style="@style/Widget.CodeMakers.TextView.Button"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_3sdp"
+                android:layout_marginRight="@dimen/_3sdp"
+                android:onClick="@{model::onCallStoreClicked}"
+                android:text="@string/call_store" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_10sdp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/call_carrier_btn"
+                style="@style/Widget.CodeMakers.TextView.Button"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_3sdp"
+                android:layout_marginRight="@dimen/_3sdp"
+                android:onClick="@{model::onCallCouierClicked}"
+                android:text="@string/call_carrier" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_10sdp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/chat_carrier_btn"
+                style="@style/Widget.CodeMakers.TextView.Button"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_3sdp"
+                android:layout_marginRight="@dimen/_3sdp"
+                android:onClick="@{model::onChatCustomer}"
+                android:text="@string/chat_with_carrier" />
+
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_10sdp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_150sdp">
+
+            <View
+                android:id="@+id/view_center"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_5sdp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/line_bg_grey" />
+
+            <RelativeLayout
+                android:layout_width="@dimen/_75sdp"
+                android:layout_height="@dimen/_77sdp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:gravity="center_horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/img_cheat"
+                        android:layout_width="@dimen/_32sdp"
+                        android:layout_height="@dimen/_32sdp"
+                        android:padding="@dimen/_8sdp"
+                        android:onClick="@{model::onChatCustomer}"
+                        android:src="@drawable/cheat" />
+
+                    <ImageView
+                        android:layout_width="@dimen/_32sdp"
+                        android:layout_height="@dimen/_32sdp"
+                        android:layout_toRightOf="@+id/img_cheat"
+                        android:padding="@dimen/_5sdp"
+                        android:onClick="@{model::onCallCouierClicked}"
+                        android:src="@drawable/calls" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_50sdp"
+                    android:layout_alignParentBottom="true"
+                    android:src="@drawable/courier_pin" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="@dimen/_75sdp"
+                android:layout_height="@dimen/_77sdp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:gravity="center_horizontal">
+
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_50sdp"
+                    android:layout_alignParentTop="true"
+                    android:src="@drawable/restorent_pin" />
+
+                <ImageView
+                    android:layout_width="@dimen/_32sdp"
+                    android:layout_height="@dimen/_32sdp"
+                    android:padding="@dimen/_5sdp"
+                    android:layout_centerHorizontal="true"
+                    android:onClick="@{model::onCallStoreClicked}"
+                    android:layout_alignParentBottom="true"
+                    android:src="@drawable/calls" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="@dimen/_75sdp"
+                android:layout_height="@dimen/_77sdp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:gravity="center_horizontal">
+
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_50sdp"
+                    android:layout_alignParentTop="true"
+                    android:src="@drawable/yuo_pin" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_32sdp"
+                    android:padding="@dimen/_5sdp"
+                    android:gravity="center"
+                    android:text="YOU"
+                    android:textColor="@color/text_button_color"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignParentBottom="true" />
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_10sdp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/counter_tv"
+            style="@style/Widget.CodeMakers.TextView.Subtitle.Black"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/_10sdp"
+            android:drawableStart="@drawable/ic_watch_later_black_24dp"
+            android:drawablePadding="@dimen/_5sdp"
+            android:gravity="center"
+            android:text="@{model.currentJobObsv.time}" />
+
+    </LinearLayout>
+
+</layout>

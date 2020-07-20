@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:model="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.app.codesmakers.ui.trackorder.TrackOrderVM" />
+
+    </data>
+
+
+    <LinearLayout
+        android:id="@+id/bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_bottom_sheet"
+        android:minHeight="@dimen/_200sdp"
+        android:orientation="vertical"
+        app:behavior_hideable="false"
+        app:behavior_peekHeight="@dimen/_minus1sdp"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+        <LinearLayout
+            android:id="@+id/ll_second"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/image_store"
+                    android:layout_width="@dimen/_33sdp"
+                    android:layout_height="@dimen/_33sdp"
+                    app:srcCompat="@drawable/ic_store_placeholder"
+                    model:store_pic="@{model.currentJobObsv.storePic}" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/store_name_tv"
+                        style="@style/Widget.CodeMakers.TextView.Body.Black"
+                        android:layout_gravity="start"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        android:fontFamily="@font/opensans_semibold"
+                        android:text="@{model.currentJobObsv.storeName}" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/store_loc_tv"
+                        style="@style/Widget.CodeMakers.TextView.Content.Grey"
+                        android:layout_gravity="start"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        android:fontFamily="@font/opensans_semibold"
+                        android:text="@{model.currentJobObsv.content}" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/Widget.CodeMakers.TextView.Body.Black"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_100sdp"
+                android:id="@+id/order_cancelled_tv"
+                android:fontFamily="@font/opensans_bold"
+                android:gravity="center"
+                android:text="@string/this_order_cancelled" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/ok_btn"
+                style="@style/Widget.CodeMakers.TextView.Button.Blue"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_3sdp"
+                android:layout_marginRight="@dimen/_3sdp"
+                android:onClick="@{model::onOkClicked}"
+                android:text="@string/ok" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_10sdp" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</layout>

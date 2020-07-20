@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import
+            alias="v"
+            type="android.view.View" />
+
+        <variable
+            name="model"
+            type="com.app.codesmakers.api.pojo.profile.AccountModel" />
+
+        <variable
+            name="viewModel"
+            type="com.app.codesmakers.ui.account.AccountVM" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:context=".ui.orderdetails.OrderDetailsActivity">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_120sdp"
+            android:fitsSystemWindows="true"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/toolbar_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true"
+                app:collapsedTitleTextAppearance="@style/Widget.CodeMakers.TextView.Heading.Collapsable"
+                app:contentScrim="?attr/colorPrimary"
+                app:expandedTitleTextAppearance="@style/Widget.CodeMakers.TextView.Heading.ExpandableTitle"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                app:title="@string/title_account"
+                app:toolbarId="@+id/toolbar">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:layout_collapseMode="pin"
+                    app:popupTheme="@style/AppTheme.PopupOverlay"
+                    app:title="@string/title_account"
+                    app:titleTextAppearance="@style/Widget.CodeMakers.TextView.Toolbar.Black" />
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <include
+            android:id="@+id/layout_progress_view"
+            layout="@layout/layout_progress"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:overScrollMode="never"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <LinearLayout
+                android:id="@+id/linear_accounts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="@color/card_bg_color"
+                    app:cardElevation="@dimen/_1sdp"
+                    app:contentPadding="@dimen/_8sdp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{viewModel::onProfileUpdateClicked}"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/user_account_image"
+                            android:layout_width="@dimen/medium_image_size"
+                            android:layout_height="@dimen/medium_image_size"
+                            android:padding="@dimen/_2sdp"
+                            app:srcCompat="@drawable/ic_user_placeholder" />
+
+                        <LinearLayout
+                            android:id="@+id/linear_first"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:paddingLeft="@dimen/_8sdp"
+                            android:paddingTop="@dimen/_4sdp"
+                            android:paddingRight="@dimen/_8sdp">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/Widget.CodeMakers.TextView.Body"
+                                android:layout_width="wrap_content"
+                                android:layout_gravity="start"
+                                android:gravity="start"
+                                android:text="@{model.name.empty ? `UserName` : model.name}" />
+
+                            <androidx.appcompat.widget.AppCompatRatingBar
+                                android:id="@+id/rating_bar"
+                                style="@style/Widget.AppCompat.RatingBar.Small"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:max="5"
+                                android:rating="0" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/Widget.CodeMakers.TextView.Small"
+                                android:layout_width="wrap_content"
+                                android:layout_gravity="start"
+                                android:gravity="start"
+                                android:text="@{model.phone.empty ? `N/A` : model.phone}" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_12sdp" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_1sdp"
+                    app:cardBackgroundColor="@color/card_bg_color"
+                    app:cardElevation="@dimen/_1sdp"
+                    app:contentPadding="@dimen/_10sdp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/notification_tv"
+                            style="@style/Widget.CodeMakers.TextView.Content"
+                            android:layout_alignParentStart="true"
+                            android:text="@string/title_notifications" />
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:layout_marginEnd="@dimen/_5sdp" />
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_1sdp"
+                    app:cardBackgroundColor="@color/card_bg_color"
+                    app:cardElevation="@dimen/_1sdp"
+                    app:contentPadding="@dimen/_10sdp">
+
+                    <RelativeLayout
+                        android:id="@+id/rl_second"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/Widget.CodeMakers.TextView.Content"
+                            android:layout_alignParentStart="true"
+                            android:text="@string/account_balance" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/Widget.CodeMakers.TextView.Content"
+                            android:layout_alignParentEnd="true"
+                            android:text="@{model.balance.empty ? `0.0 SAR` : model.balance}" />
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_1sdp"
+                    app:cardBackgroundColor="@color/card_bg_color"
+                    app:cardElevation="@dimen/_1sdp"
+                    app:contentPadding="@dimen/_10sdp">
+
+                    <RelativeLayout
+                        android:id="@+id/rl_third"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/Widget.CodeMakers.TextView.Content"
+                            android:layout_alignParentStart="true"
+                            android:text="@string/number_of_orders" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/Widget.CodeMakers.TextView.Content"
+                            android:layout_alignParentEnd="true"
+                            android:text="@{model.numberOfOrders.empty ? `0` : model.numberOfOrders}" />
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_1sdp"
+                    app:cardBackgroundColor="@color/card_bg_color"
+                    app:cardElevation="@dimen/_1sdp"
+                    app:contentPadding="@dimen/_10sdp">
+
+                    <RelativeLayout
+                        android:id="@+id/rl_forth"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/Widget.CodeMakers.TextView.Content"
+                            android:layout_alignParentStart="true"
+                            android:text="@string/number_of_delivery" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/Widget.CodeMakers.TextView.Content"
+                            android:layout_alignParentEnd="true"
+                            android:text="@{model.numberOfDelivery.empty ? `0` : model.numberOfDelivery}" />
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_1sdp"
+                    android:onClick="@{viewModel::onFeedbackClicked}"
+                    app:cardBackgroundColor="@color/card_bg_color"
+                    app:cardElevation="@dimen/_1sdp"
+                    app:contentPadding="@dimen/_10sdp">
+
+
+                    <RelativeLayout
+                        android:id="@+id/rl_fifth"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{viewModel::onFeedbackClicked}">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/Widget.CodeMakers.TextView.Content"
+                            android:layout_alignParentStart="true"
+                            android:text="@string/user_feedback" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/_10sdp"
+                            android:layout_height="@dimen/_10sdp"
+                            android:layout_alignParentEnd="true"
+                            app:srcCompat="@drawable/ic_arrow_right_small" />
+
+                    </RelativeLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_1sdp"
+                    android:onClick="@{viewModel::onFavPlacesClicked}"
+                    app:cardBackgroundColor="@color/card_bg_color"
+                    app:cardElevation="@dimen/_1sdp"
+                    app:contentPadding="@dimen/_10sdp">
+
+
+                    <RelativeLayout
+                        android:id="@+id/rl_sixth"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{viewModel::onFavPlacesClicked}">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/Widget.CodeMakers.TextView.Content"
+                            android:layout_alignParentStart="true"
+                            android:text="@string/my_fav" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/_10sdp"
+                            android:layout_height="@dimen/_10sdp"
+                            android:layout_alignParentEnd="true"
+                            app:srcCompat="@drawable/ic_arrow_right_small" />
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_15sdp" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_1sdp"
+                    app:cardBackgroundColor="@color/card_bg_color"
+                    app:cardElevation="@dimen/_1sdp"
+                    app:contentPadding="@dimen/_10sdp">
+
+                    <RelativeLayout
+                        android:id="@+id/rl_seventh"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/Widget.CodeMakers.TextView.Content"
+                            android:layout_alignParentStart="true"
+                            android:text="@string/terms" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/_10sdp"
+                            android:layout_height="@dimen/_10sdp"
+                            android:layout_alignParentEnd="true"
+                            app:srcCompat="@drawable/ic_arrow_right_small" />
+
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_1sdp"
+                    app:cardBackgroundColor="@color/card_bg_color"
+                    app:cardElevation="@dimen/_1sdp"
+                    app:contentPadding="@dimen/_10sdp">
+
+                    <RelativeLayout
+                        android:id="@+id/rl_eighth"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/Widget.CodeMakers.TextView.Content"
+                            android:layout_alignParentStart="true"
+                            android:text="@string/about_the_app" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/_10sdp"
+                            android:layout_height="@dimen/_10sdp"
+                            android:layout_alignParentEnd="true"
+                            app:srcCompat="@drawable/ic_arrow_right_small" />
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_20sdp" />
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

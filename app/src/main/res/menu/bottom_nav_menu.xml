@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_stores"
+        android:icon="@drawable/ic_store"
+        android:title="@string/title_stores" />
+
+    <item
+        android:id="@+id/navigation_my_orders"
+        android:icon="@drawable/ic_orders"
+        android:title="@string/title_orders" />
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_home"
+        android:title="@string/title_home" />
+    <item
+        android:id="@+id/navigation_notifications"
+        android:icon="@drawable/ic_notification"
+        android:title="@string/title_notifications" />
+    <item
+        android:id="@+id/navigation_be_courier"
+        android:icon="@drawable/ic_delivery_truck"
+        android:title="@string/title_becourier" />
+
+</menu>

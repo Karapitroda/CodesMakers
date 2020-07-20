@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:viewModel="http://schemas.android.com/tools">
+
+    <data>
+
+        <import
+            alias="v"
+            type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.app.codesmakers.ui.installing.InstallingViewModel" />
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/appicon_imageview"
+            android:layout_width="@dimen/_180sdp"
+            android:layout_height="@dimen/_180sdp"
+            android:layout_centerInParent="true"
+            android:visibility="@{viewModel.settingsFetched.booleanValue() ? v.VISIBLE : v.GONE}" />
+
+        <LinearLayout
+            android:id="@+id/progress_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:visibility="@{!viewModel.settingsFetched.booleanValue() ? v.VISIBLE : v.GONE}">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/Widget.CodeMakers.TextView.Subtitle"
+                android:text="@string/installation_settings_please_wait" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_25sdp"
+                android:indeterminate="true" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</layout>

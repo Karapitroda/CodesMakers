@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="imageUrl"
+            type="String" />
+
+        <variable
+            name="model"
+            type="com.app.codesmakers.api.pojo.menu.MenuModel" />
+
+        <import
+            alias="v"
+            type="android.view.View" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardview"
+            android:layout_width="match_parent"
+            app:cardBackgroundColor="@color/table_cell_bg_color"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_1sdp"
+            app:cardCornerRadius="@dimen/_1sdp">
+
+            <LinearLayout
+                android:id="@+id/grid_layout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_55sdp"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="@dimen/_55sdp"
+                    android:layout_height="@dimen/_55sdp"
+                    android:paddingLeft="@dimen/_5sdp"
+                    android:paddingRight="@dimen/_5sdp">
+
+                    <ProgressBar
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_centerInParent="true" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/store_image"
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/bg_circle_grey"
+                        android:scaleType="centerCrop"
+                        tools:ignore="UnusedAttribute" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/title_tv"
+                        style="@style/Widget.CodeMakers.TextView.Content.Black"
+                        android:layout_gravity="start"
+                        android:fontFamily="@font/opensans_semibold"
+                        android:text="@{model.name}" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/sub_title_tv"
+                        style="@style/Widget.CodeMakers.TextView.Small.Grey"
+                        android:layout_gravity="start"
+                        android:fontFamily="@font/opensans_semibold"
+                        android:text="@{`$`+model.price}" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linear_options"
+                    android:layout_width="@dimen/_90sdp"
+                    android:layout_height="@dimen/_26sdp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/add_minus_bg">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_remove"
+                        style="@style/Widget.CodeMakers.TextView.Heading.Primary"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="-"
+                        android:textColor="@color/app_tint_color"
+                        android:textSize="@dimen/_14sdp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/qty_tv"
+                        style="@style/Widget.CodeMakers.TextView.Body.Primary"
+                        android:paddingLeft="@dimen/_2sdp"
+                        android:paddingRight="@dimen/_2sdp"
+                        android:text="@{model.quantityStr}"
+                        android:textColor="@color/app_tint_color" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_add"
+                        style="@style/Widget.CodeMakers.TextView.Heading.Primary"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="+"
+                        android:textColor="@color/app_tint_color"
+                        android:textSize="@dimen/_14sdp" />
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="@dimen/_5sdp"
+                    android:layout_height="match_parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/cancel_action"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_gravity="center"
+                    android:padding="@dimen/_3sdp"
+                    app:srcCompat="@drawable/ic_close" />
+
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+</layout>

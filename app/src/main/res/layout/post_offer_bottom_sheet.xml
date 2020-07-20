@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:model="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.app.codesmakers.ui.applycarrier.ApplyVM" />
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/_270sdp"
+        android:orientation="vertical"
+        app:behavior_peekHeight="@dimen/_minus1sdp"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/order_disc"
+            style="@style/Widget.CodeMakers.TextView.Content.Grey"
+            android:layout_width="match_parent"
+            android:background="@drawable/bg_search"
+            android:minHeight="@dimen/_50sdp"
+            android:padding="@dimen/_10sdp"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:fontFamily="@font/opensans_semibold"
+            android:text="@{model.carrierInfo.content}" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_bottom_sheet"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/image_store"
+                    android:layout_width="@dimen/_33sdp"
+                    android:layout_height="@dimen/_33sdp"
+                    app:srcCompat="@drawable/ic_store_placeholder"
+                    model:store_pic="@{model.carrierInfo.storePic}" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/store_name_tv"
+                        style="@style/Widget.CodeMakers.TextView.Body.Black"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        android:fontFamily="@font/opensans_semibold"
+                        android:text="@{model.carrierInfo.storeName}" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/store_loc_tv"
+                        style="@style/Widget.CodeMakers.TextView.Content.Grey"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        android:visibility="gone"
+                        android:fontFamily="@font/opensans_semibold"
+                        android:text="@{model.carrierInfo.content}" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_42sdp"
+                android:gravity="center">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/duration_tv"
+                    style="@style/Widget.CodeMakers.TextView.Button"
+                    android:layout_width="wrap_content"
+                    android:fontFamily="@font/opensans_semibold"
+                    android:maxWidth="@dimen/_80sdp"
+                    android:maxLines="1"
+                    android:text="@{model.carrierInfo.duration == null || model.carrierInfo.duration.empty ? `n/a` : model.carrierInfo.duration}" />
+
+                <Space
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="match_parent" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/distance_tv"
+                    style="@style/Widget.CodeMakers.TextView.Button"
+                    android:layout_width="wrap_content"
+                    android:fontFamily="@font/opensans_semibold"
+                    android:text="@{model.carrierInfo.distance == null || model.carrierInfo.distance.empty ? `n/a` : model.carrierInfo.distance}" />
+
+                <Space
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="match_parent" />
+
+                <RelativeLayout
+                    style="@style/Widget.CodeMakers.TextView.Button.Grey"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:paddingStart="@dimen/_10sdp"
+                    android:paddingEnd="@dimen/_10sdp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/star_iv"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        app:srcCompat="@drawable/ic_star_black_24dp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/rating_tv"
+                        style="@style/Widget.CodeMakers.TextView.Content.Primary"
+                        android:layout_toEndOf="@+id/star_iv"
+                        android:fontFamily="@font/opensans_bold"
+                        android:singleLine="true"
+                        android:text="@{model.carrierInfo.ownerRate}"
+                        android:textColor="@color/app_tint_color" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/Widget.CodeMakers.TextView.Small"
+                        android:layout_below="@+id/rating_tv"
+                        android:layout_toEndOf="@+id/star_iv"
+                        android:text="@string/customer_rate" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_10sdp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_130sdp">
+
+                <!--Wheel View-->
+                <com.app.codesmakers.utils.customviews.wheelpicker.WheelPicker
+                    android:id="@+id/wheel_picker_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:background="@color/card_bg_color"
+                    app:wheel_atmospheric="true"
+                    app:wheel_curved="true"
+                    app:wheel_cyclic="true"
+                    app:wheel_item_text_color="@color/text_subheading_color"
+                    app:wheel_item_text_size="@dimen/_14sdp"
+                    app:wheel_selected_item_text_color="@color/text_heading_color" />
+            </RelativeLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_15sdp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/post_button"
+                style="@style/Widget.CodeMakers.TextView.Button.Blue"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_3sdp"
+                android:onClick="@{model::onPostOfferClicked}"
+                android:text="@string/post_offer" />
+
+        </LinearLayout>
+    </LinearLayout>
+</layout>

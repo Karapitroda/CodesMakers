@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!--Text Styles-->
+    <style name="Widget" />
+
+    <style name="Widget.CodeMakers" />
+
+    <style name="Widget.CodeMakers.TextView" />
+
+    <style name="Widget.CodeMakers.TextView.Heading" parent="Widget.CodeMakers.TextView">
+        <item name="android:textSize">@dimen/text_size_heading</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/text_heading_color</item>
+        <item name="android:fontFamily">@font/opensans_extra_bold</item>
+    </style>
+
+    <style name="Widget.CodeMakers.TextView.Title" parent="Widget.CodeMakers.TextView.Heading">
+        <item name="android:textSize">@dimen/textsize_title</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:fontFamily">@font/opensans_semibold</item>
+    </style>
+
+    <style name="Widget.CodeMakers.TextView.Subtitle" parent="Widget.CodeMakers.TextView.Title">
+        <item name="android:textSize">@dimen/text_size_subtitle</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:fontFamily">@font/opensans_regular</item>
+    </style>
+
+    <style name="Widget.CodeMakers.TextView.Body" parent="Widget.CodeMakers.TextView.Subtitle">
+        <item name="android:textSize">@dimen/text_size_body</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="Widget.CodeMakers.TextView.Content" parent="Widget.CodeMakers.TextView.Body">
+        <item name="android:textSize">@dimen/text_size_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+
+    <style name="Widget.CodeMakers.TextView.Toolbar" parent="Widget.CodeMakers.TextView.Content">
+        <item name="android:textSize">@dimen/text_size_toolbar</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:fontFamily">@font/opensans_semibold</item>
+    </style>
+
+    <style name="Widget.CodeMakers.TextView.Small" parent="Widget.CodeMakers.TextView.Content">
+        <item name="android:textSize">@dimen/text_size_small</item>
+        <item name="android:textColor">@color/text_heading_color</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="Widget.CodeMakers.TextView.FootNote" parent="Widget.CodeMakers.TextView.Small">
+        <item name="android:textSize">@dimen/text_size_footnote</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+
+    <style name="Widget.CodeMakers.TextView.Error" parent="Widget.CodeMakers.TextView.FootNote">
+        <item name="android:textColor">@color/button_red_bg</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="Widget.CodeMakers.TextView.Tiny" parent="Widget.CodeMakers.TextView.FootNote">
+        <item name="android:textSize">@dimen/text_size_tiny</item>
+    </style>
+
+    <style name="Widget.CodeMakers.TextView.Button" parent="Widget.AppCompat.Button">
+        <item name="android:textSize">@dimen/text_size_button</item>
+        <item name="android:layout_height">@dimen/_32sdp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@color/text_button_color</item>
+        <item name="android:background">@drawable/button_bg_grey</item>
+        <item name="android:elevation" tools:ignore="NewApi">@dimen/_10sdp</item>
+        <item name="android:fontFamily">@font/opensans_semibold</item>
+    </style>
+
+    <!-- heading section -->
+    <style name="Widget.CodeMakers.TextView.Heading.Primary" parent="Widget.CodeMakers.TextView.Heading">
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="Widget.CodeMakers.TextView.Heading.ExpandableTitle" parent="Widget.CodeMakers.TextView.Heading">
+        <item name="android:gravity">bottom</item>
+        <item name="android:layout_gravity">bottom</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:fontFamily">@font/opensans_bold</item>
+        <item name="android:textSize">@dimen/_20sdp</item>
+    </style>
+
+    <style name="Widget.CodeMakers.TextView.Heading.Collapsable" parent="Widget.CodeMakers.TextView.Heading.ExpandableTitle">
+        <item name="android:fontFamily">@font/opensans_semibold</item>
+        <item name="android:textSize">@dimen/_18sdp</item>
+        <item name="android:paddingBottom">@dimen/_3sdp</item>
+    </style>
+
+    <style name="Widget.CodeMakers.TextView.Heading.Grey" parent="Widget.CodeMakers.TextView.Heading">
+        <item name="android:textColor">@color/text_subheading_color</item>
+    </style>
+
+    <style name="Widget.CodeMakers.TextView.Heading.Black" parent="Widget.CodeMakers.TextView.Heading" />
+
+    <!-- title section -->
+    <style name="Widget.CodeMakers.TextView.Title.Grey" parent="Widget.CodeMakers.TextView.Title">
+        <item name="android:textColor">@color/text_subheading_color</item>
+    </style>
+
+    <style name="Widget.CodeMakers.TextView.Title.Primary" parent="Widget.CodeMakers.TextView.Title">
+        <item name="android:textColor">@color/app_tint_color</item>
+    </style>
+
+    <style name="Widget.CodeMakers.TextView.Title.Black" parent="Widget.CodeMakers.TextView.Title" />
+
+    <!-- toolbar section -->
+    <style name="Widget.CodeMakers.TextView.Toolbar.Grey" parent="Widget.CodeMakers.TextView.Toolbar">
+        <item name="android:textColor">@color/text_subheading_color</item>
+    </style>
+
+    <style name="Widget.CodeMakers.TextView.Toolbar.Black" parent="Widget.CodeMakers.TextView.Toolbar" />
+
+    <!-- body section -->
+    <style name="Widget.CodeMakers.TextView.Body.Primary" parent="Widget.CodeMakers.TextView.Body">
+        <item name="android:textColor">@color/app_tint_color</item>
+    </style>
+
+    <style name="Widget.CodeMakers.TextView.Body.Blue" parent="Widget.CodeMakers.TextView.Body">
+        <item name="android:textColor">@color/button_blue_bg</item>
+    </style>
+
+    <style name="Widget.CodeMakers.TextView.Body.Grey" parent="Widget.CodeMakers.TextView.Body">
+        <item name="android:textColor">@color/text_subheading_color</item>
+    </style>
+
+    <style name="Widget.CodeMakers.TextView.Body.Black" parent="Widget.CodeMakers.TextView.Body" />
+
+
+    <!-- subtitle section -->
+    <style name="Widget.CodeMakers.TextView.Subtitle.Primary" parent="Widget.CodeMakers.TextView.Subtitle">
+        <item name="android:textColor">@color/app_tint_color</item>
+    </style>
+
+    <style name="Widget.CodeMakers.TextView.Subtitle.Grey" parent="Widget.CodeMakers.TextView.Subtitle">
+        <item name="android:textColor">@color/text_subheading_color</item>
+    </style>
+
+    <style name="Widget.CodeMakers.TextView.Subtitle.Black" parent="Widget.CodeMakers.TextView.Subtitle" />
+
+    <!-- Content section -->
+    <style name="Widget.CodeMakers.TextView.Content.White" parent="Widget.CodeMakers.TextView.Content">
+        <item name="android:textColor">@color/appWhite</item>
+    </style>
+
+    <style name="Widget.CodeMakers.TextView.Content.Primary" parent="Widget.CodeMakers.TextView.Content">
+        <item name="android:textColor">@color/app_tint_color</item>
+    </style>
+
+    <style name="Widget.CodeMakers.TextView.Content.Grey" parent="Widget.CodeMakers.TextView.Content">
+        <item name="android:textColor">@color/text_subheading_color</item>
+    </style>
+
+    <style name="Widget.CodeMakers.TextView.Content.Black" parent="Widget.CodeMakers.TextView.Content" />
+
+    <!-- footnote section -->
+
+    <style name="Widget.CodeMakers.TextView.FootNote.Primary" parent="Widget.CodeMakers.TextView.FootNote">
+        <item name="android:textColor">@color/app_tint_color</item>
+    </style>
+
+    <style name="Widget.CodeMakers.TextView.FootNote.BottomTab" parent="Widget.CodeMakers.TextView.FootNote">
+        <item name="android:textColor">@color/tab_selected_color</item>
+    </style>
+
+    <style name="Widget.CodeMakers.TextView.FootNote.Grey" parent="Widget.CodeMakers.TextView.FootNote">
+        <item name="android:textColor">@color/text_subheading_color</item>
+    </style>
+
+    <style name="Widget.CodeMakers.TextView.FootNote.Black" parent="Widget.CodeMakers.TextView.FootNote" />
+
+    <!--Small Text Section-->
+    <style name="Widget.CodeMakers.TextView.Small.Black" parent="Widget.CodeMakers.TextView.Small" />
+
+    <style name="Widget.CodeMakers.TextView.Small.Primary" parent="Widget.CodeMakers.TextView.Small">
+        <item name="android:textColor">@color/app_tint_color</item>
+    </style>
+
+    <style name="Widget.CodeMakers.TextView.Small.Grey" parent="Widget.CodeMakers.TextView.Small">
+        <item name="android:textColor">@color/text_subheading_color</item>
+    </style>
+
+    <!--Tiny Text Section-->
+    <style name="Widget.CodeMakers.TextView.Tiny.Black" parent="Widget.CodeMakers.TextView.Tiny" />
+
+    <style name="Widget.CodeMakers.TextView.Tiny.Primary" parent="Widget.CodeMakers.TextView.Tiny">
+        <item name="android:textColor">@color/app_tint_color</item>
+    </style>
+
+    <style name="Widget.CodeMakers.TextView.Tiny.Grey" parent="Widget.CodeMakers.TextView.Tiny">
+        <item name="android:textColor">@color/text_subheading_color</item>
+    </style>
+
+    <style name="Widget.CodeMakers.TextView.Tiny.BottomTab" parent="Widget.CodeMakers.TextView.Tiny">
+        <item name="android:textColor">@color/tab_normal_color</item>
+    </style>
+
+    <!--Button Section-->
+    <style name="Widget.CodeMakers.TextView.Button.Blue" parent="Widget.CodeMakers.TextView.Button">
+        <item name="android:textColor">@color/button_blue_text_color</item>
+        <item name="android:background">@drawable/button_bg_blue</item>
+    </style>
+
+    <style name="Widget.CodeMakers.TextView.Button.Red" parent="Widget.CodeMakers.TextView.Button">
+        <item name="android:textColor">@color/button_red_text_color</item>
+        <item name="android:background">@drawable/button_bg_red</item>
+    </style>
+
+    <style name="Widget.CodeMakers.TextView.Button.yellow" parent="Widget.CodeMakers.TextView.Button">
+        <item name="android:textColor">@color/button_yellow_text_color</item>
+        <item name="android:background">@drawable/button_bg_yellow</item>
+    </style>
+
+    <style name="Widget.CodeMakers.TextView.Button.Green" parent="Widget.CodeMakers.TextView.Button">
+        <item name="android:textColor">@color/button_green_text_color</item>
+        <item name="android:background">@drawable/button_bg_green</item>
+    </style>
+    <style name="Widget.CodeMakers.TextView.Button.Grey" parent="Widget.CodeMakers.TextView.Button">
+        <item name="android:textColor">@color/button_grey_text_color</item>
+        <item name="android:background">@drawable/button_bg_grey</item>
+    </style>
+
+    <style name="Widget.CodeMakers.TextView.Button.NoBG" parent="Widget.CodeMakers.TextView.Button">
+        <item name="android:textColor">@color/button_nobg_text_color</item>
+        <item name="android:background">@color/button_nobg_bg</item>
+        <item name="android:fontFamily">@font/opensans_semibold</item>
+        <item name="android:elevation" tools:ignore="NewApi">0dp</item>
+    </style>
+
+    <style name="Widget.CodeMakers.TextView.Button.Dialog" parent="Widget.CodeMakers.TextView.Button.Grey">
+        <item name="android:textSize">@dimen/text_size_button_dialog</item>
+        <item name="android:layout_height">@dimen/height_button_dialog</item>
+    </style>
+
+    <!--Font style-->
+    <style name="TextAppearance.SemiBold" parent="android:TextAppearance">
+        <item name="android:fontFamily">@font/raleway_semi_bold</item>
+    </style>
+
+    <style name="TextAppearance.MediumFontPath" parent="android:TextAppearance">
+        <item name="android:fontFamily">@font/raleway_medium</item>
+    </style>
+
+    <style name="TextAppearance.Italic" parent="android:TextAppearance">
+        <item name="android:fontFamily">@font/raleway_italic</item>
+    </style>
+
+    <style name="TextAppearance.LightItalic" parent="android:TextAppearance">
+        <item name="android:fontFamily">@font/raleway_light_italic</item>
+    </style>
+
+    <style name="TextAppearance.BoldFontPath" parent="android:TextAppearance">
+        <item name="android:fontFamily">@font/raleway_bold</item>
+    </style>
+
+    <style name="TextAppearance.RegularFontPath" parent="android:TextAppearance">
+        <item name="android:fontFamily">@font/raleway_regular</item>
+    </style>
+
+    <style name="TextAppearance.LightFontPath" parent="android:TextAppearance">
+        <item name="android:fontFamily">@font/raleway_light</item>
+    </style>
+
+    <!-- EditText style -->
+    <style name="EditTextStyle" parent="@android:style/TextAppearance.Widget.EditText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/_12sdp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:gravity">center_vertical|start</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:background">@drawable/bg_edittext</item>
+        <item name="android:textColor">@color/edittext_text_color</item>
+        <item name="android:textColorHint">@color/edittext_placeholder_color</item>
+        <item name="android:drawablePadding">@dimen/_10sdp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:fontFamily">@font/opensans_regular</item>
+    </style>
+
+    <!-- SearchEditText style -->
+    <style name="SearchEditTextStyle" parent="@android:style/TextAppearance.Widget.EditText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/_33sdp</item>
+        <item name="android:textSize">@dimen/_13sdp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textColor">@color/edittext_text_color</item>
+        <item name="android:textColorHint">@color/edittext_placeholder_color</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="Widget.CodeMakers.TextView.TabTextAppearance" parent="Widget.CodeMakers.TextView.FootNote">
+        <item name="android:textAllCaps">true</item>
+        <item name="android:fontFamily">@font/opensans_bold</item>
+    </style>
+
+    <style name="Widget.CodeMakers.TextView.TabTextAppearance.Genre" parent="Widget.CodeMakers.TextView.Small">
+        <item name="android:textAllCaps">true</item>
+        <item name="android:fontFamily">@font/opensans_bold</item>
+    </style>
+</resources>

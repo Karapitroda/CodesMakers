@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.app.codesmakers.ui.chat.ChatViewModel" />
+
+    </data>
+
+
+    <LinearLayout
+        android:id="@+id/bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/_225sdp"
+        android:orientation="vertical"
+        android:elevation="@dimen/_10sdp"
+        app:behavior_hideable="false"
+        app:behavior_peekHeight="@dimen/_minus1sdp"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            app:cardElevation="@dimen/_10sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            app:cardBackgroundColor="@color/card_bg_color"
+            app:cardCornerRadius="@dimen/_10sdp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/Widget.CodeMakers.TextView.Content.Grey"
+                    android:layout_gravity="center"
+                    android:padding="@dimen/_5sdp"
+                    android:text="@string/options" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_10sdp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:background="@color/colorLightGrey" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    style="@style/Widget.CodeMakers.TextView.Button.NoBG"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_1sdp"
+                    android:layout_marginRight="@dimen/_1sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:onClick="@{model::onSendImageClicked}"
+                    android:text="@string/option_send_image" />
+
+                <View
+                    android:background="@color/colorLightGrey"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    style="@style/Widget.CodeMakers.TextView.Button.NoBG"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_1sdp"
+                    android:layout_marginRight="@dimen/_1sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:onClick="@{model::onImageComplaintClicked}"
+                    android:text="@string/option_image_complaint" />
+
+                <View
+                    android:background="@color/colorLightGrey"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    style="@style/Widget.CodeMakers.TextView.Button.NoBG"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_1sdp"
+                    android:layout_marginRight="@dimen/_1sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:id="@+id/cancel_order_button"
+                    android:onClick="@{model::onCancelOrderClicked}"
+                    android:text="@string/cancel_order" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    style="@style/Widget.CodeMakers.TextView.Button.NoBG"
+                    android:id="@+id/post_bill_button"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_1sdp"
+                    android:layout_marginRight="@dimen/_1sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:onClick="@{model::onPostBillClicked}"
+                    android:text="@string/option_post_bill" />
+
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            style="@style/Widget.CodeMakers.TextView.Button.Grey"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:fontFamily="@font/opensans_bold"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:id="@+id/button_cancel"
+            android:text="@string/cancel"
+            android:textSize="@dimen/_14sdp" />
+
+
+
+    </LinearLayout>
+
+</layout>

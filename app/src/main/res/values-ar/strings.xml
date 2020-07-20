@@ -1,0 +1,159 @@
+<resources>
+    <string name="app_name">مصنعي البرمجيات</string>
+    <string name="title_stores">المتاجر</string>
+    <string name="title_home">البداية</string>
+    <string name="title_orders">طلباتي</string>
+    <string name="title_notifications">التنبيهات</string>
+    <string name="title_courier">طلبات التوصيل</string>
+    <string name="title_becourier">توصيل الطلبات</string>
+
+    <string name="connection_error">الرجاء الاتصال بالنت</string>
+    <string name="action_settings">الاعدادات</string>
+    <string name="step">خطوة</string>
+    <string name="pay_bill">فاتورة الأجرة</string>
+    <string name="large_text">Lorem dummy text!</string>
+
+    <!--Installing-->
+    <string name="installation_settings_please_wait">تثبيت الاعدادات\nالرجاء الانتظار ‫…‬</string>
+
+    <!--Language-->
+    <string name="select_language">اختر اللغة</string>
+    <string name="language_arabic">عربي</string>
+    <string name="language_english">English</string>
+
+    <!--Agreement-->
+    <string name="accepting_terms">الموافقة على الشروط والاحكام</string>
+    <string name="accepting_terms_context">استخدامك لهذا التطبيق يعني انك موافق على الشروط والاحكام</string>
+    <string name="accepting_terms_erros">الرجاء الموافقة للاستمرار</string>
+    <string name="read_terms">اقراء الشروط </string>
+    <string name="accept">موافقة</string>
+
+    <!--Login-->
+    <string name="your_phone_number">رقم هاتفك</string>
+    <string name="phone_number_context">ادخل رقم هاتفك للمواصلة</string>
+    <string name="cancel">الغاء</string>
+    <string name="next">التالي</string>
+    <string name="skip">تجاوز</string>
+    <string name="start">ابدا</string>
+    <string name="activation_code">رمز التفعيل</string>
+    <string name="activation_code_context">ادخل رمز التفعيل المرسل لجوالك</string>
+    <string name="hint_number">رقم الجوال</string>
+    <string name="hint_code">ادخل الرمز</string>
+
+    <!--How to use-->
+    <string name="how_to_use_the_app">كيف تستخدم البرنامج</string>
+
+    <!--Home-->
+    <string name="new_str">جديد</string>
+    <string name="advertisement">اعلان</string>
+    <string name="stores_for_you">اخترنا لك</string>
+    <string name="see_all">جميع المتاجر</string>
+
+    <!--User Account-->
+    <string name="title_account">الملف الشخصي</string>
+    <string name="account_balance">الرصيد</string>
+    <string name="number_of_orders">عدد الطلبات</string>
+    <string name="number_of_delivery">عدد التوصيلات</string>
+    <string name="user_feedback">اراء المستخدمين</string>
+    <string name="my_fav">اماكني المفضلة</string>
+    <string name="language">اللغة</string>
+    <string name="terms">الشروط والاحكام</string>
+    <string name="about_the_app">عن التطبيق</string>
+
+    <!--User Feedack-->
+    <string name="users_feedback">اراء المستخدمين</string>
+    <string name="favorite_places">الاماكن المفضلة</string>
+    <string name="action">فعل</string>
+    <string name="delete">الغاء</string>
+    <string name="this_order_complted">الطلب مكتمل</string>
+    <string name="this_order_cancelled">الطلب الغي</string>
+    <string name="this_order_is_assigned">هذا الطلب استلمه شخص اخر</string>
+    <string name="ok">حسنا</string>
+
+    <!--Store Details-->
+    <string name="store_name">اسم المتجر</string>
+    <string name="delivery_duration">فترة التوصيل</string>
+    <string name="your_location">موقعك</string>
+    <string name="coupon">كوبون</string>
+    <string name="list_of_favorite_locations">قائمة بالاماكن المفضلة</string>
+    <string name="add_to_favorites">اضافة الى المفضلة</string>
+    <string name="location_name">اسم الموقع</string>
+    <string name="enter_location_name">ادخل اسم الموقع</string>
+    <string name="please_enter_location_name">الرجاء ادخل اسم الموقع</string>
+    <string name="add">اضافة</string>
+    <string name="please_add_location">الرجاء الضغط مطولا على الخريطة للاضافة</string>
+
+    <!--Order-->
+    <string name="my_orders">طلباتي</string>
+    <string name="applied_oders">فعالة</string>
+    <string name="details">التفاصيل‫:‬</string>
+    <string name="add_item">اضافة عنصر</string>
+    <string name="order_details">تفاصيل الطلب</string>
+    <string name="order_summary">ملخص الطلب</string>
+    <string name="enter_details">اضافة تفاصيل ‫:‬</string>
+    <string name="write_here">اكتب هنا ‫…‬</string>
+    <string name="price">السعر‫:‬</string>
+    <string name="no_items">لا تجود عناصر مختارة</string>
+    <string name="enter_description">الرجاء كتابة المزيد من التفاصيل</string>
+
+    <!--Track Order Customer Side-->
+    <string name="waiting_couriers">انتظار المندوبين</string>
+    <string name="cancel_order">الغاء الطلب</string>
+    <string name="hint_type_here">اكتب هنا ‫...‬</string>
+    <string name="status_post_bill">اضافة فاتورة</string>
+    <string name="status_order_delivered">تم توصيل الطلب</string>
+    <string name="status_deliver_order">توصيل الطلب</string>
+    <string name="call_store">الاتصال بالمتجر</string>
+    <string name="call_carrier">الاتصال بالمندوب</string>
+    <string name="chat_with_carrier">تحدث مع المندوب</string>
+    <string name="add_comment">اضافة تعليق</string>
+    <string name="complete_the_order">اكمال الطلب</string>
+    <string name="send_feedback">ارسل رايك</string>
+    <string name="delivery_cost">تكلفة التوصيل</string>
+    <string name="timer">الوقت</string>
+    <string name="cancel_order_ask">الغاء الطلب ؟</string>
+    <string name="are_you_sure">هل انت موتاكد من الغاء الطلب ؟</string>
+    <!--Chat-->
+    <string name="chat_with">محادثة مع</string>
+    <string name="options">الخيارات</string>
+    <string name="option_send_image">ارسل صورة</string>
+    <string name="option_image_complaint">ارسل شكوى</string>
+    <string name="option_post_bill">اضافة فاتورة</string>
+
+    <!--Apply Carrier Side-->
+    <string name="cancel_order_offer">الغاء عرضك المقدم (%s)</string>
+    <string name="waiting_customer">انتضار موافقة الزبون</string>
+    <string name="chat_with_customer">التحدث مع الزبون</string>
+    <string name="call_customer">اتصل بالزبون</string>
+    <string name="confirm_delivered">هل وصل الطلب ؟</string>
+    <string name="confirm_delivered_content">تاكيد هل وصل الطلب ؟</string>
+    <string name="confirm">تاكيد</string>
+    <string name="post_offer">اضافة عرض</string>
+    <string name="provide_rating">فضلا قم بالتقييم</string>
+    <string name="select_offer_price">فضلا اختر سعر الخدمة</string>
+    <string name="field_can_not_be_empty">املاء كل الحقول</string>
+    <!--Comment-->
+    <string name="comment_title">تعليق</string>
+    <string name="post">اضافة</string>
+
+    <!--Update Profile-->
+    <string name="title_account_update">تحديث الملف الشخصي</string>
+    <string name="name">الاسم</string>
+    <string name="hint_email">البريد الكتروني</string>
+    <string name="hint_language">اللغة</string>
+    <string name="update">تحديث</string>
+    <string name="change_number">تغير الهاتف</string>
+    <string name="verify">تاكيد</string>
+    <string name="customer_rate">تقييم الزبون</string>
+    <string name="resend_in">إعادة إرسال</string>
+
+
+    <!--No Data Error-->
+    <string name="no_notification">لا إخطارات حتى الآن</string>
+    <string name="no_store">في موقعك لا يوجد أي متجر متاح</string>
+    <string name="no_ads">لا يوجد أي إعلان متاح</string>
+    <string name="no_order">لا يوجد لديك أوامر</string>
+    <string name="no_delivery">لم يكن لديك أي طلب للتسليم</string>
+
+
+</resources>

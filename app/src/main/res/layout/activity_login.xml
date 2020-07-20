@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import
+            alias="v"
+            type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.app.codesmakers.ui.login.LoginViewModel" />
+
+        <variable
+            name="data"
+            type="com.app.codesmakers.api.pojo.request.LoginRequest" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:context=".ui.login.LoginActivity">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            tools:context=".ui.login.LoginActivity"
+            tools:showIn="@layout/activity_login">
+
+            <RelativeLayout
+                android:id="@+id/rl_main"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_20sdp">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/card_first"
+                        android:layout_width="@dimen/_280sdp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        android:layout_marginBottom="@dimen/_8sdp"
+                        android:visibility="@{!data.phoneAdded ? v.VISIBLE : v.GONE}"
+                        app:cardBackgroundColor="@color/card_bg_color"
+                        app:cardCornerRadius="@dimen/_10sdp"
+                        app:cardElevation="@dimen/_3sdp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:paddingTop="@dimen/_8sdp">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/phone_title_tv"
+                                style="@style/Widget.CodeMakers.TextView.Body"
+                                android:layout_gravity="center"
+                                android:layout_margin="@dimen/_8sdp"
+                                android:fontFamily="@font/opensans_semibold"
+                                android:text="@string/your_phone_number" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/enter_phone_subtitle_tv"
+                                style="@style/Widget.CodeMakers.TextView.Content"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:paddingLeft="@dimen/_10sdp"
+                                android:paddingRight="@dimen/_10sdp"
+                                android:paddingBottom="@dimen/_10sdp"
+                                android:text="@string/phone_number_context" />
+
+                            <Space
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_4sdp" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/_15sdp"
+                                android:layout_marginRight="@dimen/_15sdp"
+                                android:background="@drawable/bg_edittext">
+
+                                <com.hbb20.CountryCodePicker
+                                    android:id="@+id/ccp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    app:ccpDialog_textColor="@color/text_heading_color"
+                                    app:ccp_arrowSize="@dimen/_14sdp"
+                                    app:ccp_autoDetectCountry="true"
+                                    app:ccp_contentColor="@color/text_heading_color"
+                                    app:ccp_defaultPhoneCode="93"
+                                    app:ccp_showFlag="true"
+                                    app:ccp_showFullName="false"
+                                    app:ccp_showNameCode="false"
+                                    app:ccp_showPhoneCode="true"
+                                    app:ccp_textSize="@dimen/_12sdp" />
+
+                                <androidx.appcompat.widget.AppCompatEditText
+                                    android:id="@+id/mobile_number_et"
+                                    style="@style/EditTextStyle"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_30sdp"
+                                    android:background="@color/transparent"
+                                    android:hint="@string/hint_number"
+                                    android:inputType="number"
+                                    android:paddingLeft="@dimen/_2sdp"
+                                    android:text="@={data.phoneNumber}"
+                                    android:textAlignment="viewStart" />
+                            </LinearLayout>
+
+                            <Space
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_10sdp" />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_50sdp">
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:layout_above="@+id/linear_buttons"
+                                    android:background="@color/light_stroke_color" />
+
+                                <LinearLayout
+                                    android:id="@+id/linear_buttons"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_40sdp"
+                                    android:layout_alignParentBottom="true">
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:id="@+id/next_textview"
+                                        style="@style/Widget.CodeMakers.TextView.Button.NoBG"
+                                        android:layout_weight="1"
+                                        android:layout_height="match_parent"
+                                        android:layout_gravity="bottom"
+                                        android:gravity="center"
+                                        android:onClick="@{viewModel::onNextPhoneClicked}"
+                                        android:text="@string/next" />
+
+                                </LinearLayout>
+
+                            </RelativeLayout>
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/card_second"
+                        android:layout_width="@dimen/_280sdp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        android:layout_marginBottom="@dimen/_8sdp"
+                        android:visibility="@{data.phoneAdded ? v.VISIBLE : v.GONE}"
+                        app:cardBackgroundColor="@color/card_bg_color"
+                        app:cardCornerRadius="@dimen/_10sdp"
+                        app:cardElevation="@dimen/_3sdp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:paddingTop="@dimen/_8sdp">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/activation_code_title"
+                                style="@style/Widget.CodeMakers.TextView.Body"
+                                android:layout_gravity="center"
+                                android:layout_margin="@dimen/_8sdp"
+                                android:fontFamily="@font/opensans_semibold"
+                                android:text="@string/activation_code" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/activation_code_subtitle"
+                                style="@style/Widget.CodeMakers.TextView.Content"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:paddingLeft="@dimen/_10sdp"
+                                android:paddingRight="@dimen/_10sdp"
+                                android:paddingBottom="@dimen/_10sdp"
+                                android:text="@string/activation_code_context" />
+
+                            <Space
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_4sdp" />
+
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:id="@+id/enter_code_et"
+                                style="@style/EditTextStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_29sdp"
+                                android:layout_marginLeft="@dimen/_15sdp"
+                                android:layout_marginRight="@dimen/_15sdp"
+                                android:hint="@string/hint_code"
+                                android:inputType="number"
+                                android:text="@={data.code}"
+                                android:textAlignment="viewStart" />
+
+                            <Space
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_10sdp" />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_50sdp">
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:layout_above="@+id/linear_buttons_2"
+                                    android:background="@color/light_stroke_color" />
+
+                                <LinearLayout
+                                    android:id="@+id/linear_buttons_2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_40sdp"
+                                    android:layout_alignParentBottom="true"
+                                    android:weightSum="2">
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:id="@+id/timer_textview"
+                                        style="@style/Widget.CodeMakers.TextView.Button.NoBG"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:alpha="@{data.resendEnable ? 1.0f : 0.3f}"
+                                        android:enabled="@{data.resendEnable}"
+                                        android:fontFamily="@font/opensans_semibold"
+                                        android:onClick="@{viewModel::onResendClicked}"
+                                        android:text="@{data.timerStr}" />
+
+                                    <View
+                                        android:layout_width="1dp"
+                                        android:layout_height="match_parent"
+                                        android:background="@color/light_stroke_color" />
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:id="@+id/next_activation_textview"
+                                        style="@style/Widget.CodeMakers.TextView.Button.NoBG"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:fontFamily="@font/opensans_semibold"
+                                        android:onClick="@{viewModel::onNextClicked}"
+                                        android:text="@string/next" />
+
+                                </LinearLayout>
+
+
+                            </RelativeLayout>
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_15sdp"
+                    android:visibility="@{data.showProgress ? v.VISIBLE : v.GONE}">
+
+                    <ProgressBar
+                        android:id="@+id/progressBar"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:indeterminate="true"
+                        android:progressTint="@color/appWhite"
+                        tools:ignore="UnusedAttribute" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

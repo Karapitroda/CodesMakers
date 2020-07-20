@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import
+            alias="v"
+            type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.app.codesmakers.ui.chat.ChatViewModel" />
+
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:context="com.newapp.toolbarwork.MainActivity">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_80sdp"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_80sdp"
+                android:background="?attr/colorPrimary"
+                app:popupTheme="@style/AppTheme.PopupOverlay">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/user_image_chat"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_gravity="center"
+                        app:srcCompat="@drawable/ic_user_placeholder" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/toolbar_tv"
+                        style="@style/Widget.CodeMakers.TextView.Content.Black"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_30sdp"
+                        android:gravity="center"
+                        android:text="@string/app_name" />
+                </LinearLayout>
+
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+        <include
+            android:id="@+id/chat_options_layout"
+            layout="@layout/chat_option_bottom_sheet"
+            bind:model="@{viewModel}" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+            <com.app.codesmakers.utils.customviews.smoothprogressbar.SmoothProgressBar
+                android:id="@+id/progress_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:indeterminate="true"
+                app:layout_anchorGravity="bottom"
+                app:spb_color="@color/app_tint_color"
+                app:spb_mirror_mode="false"
+                app:spb_progressiveStart_activated="true"
+                app:spb_progressiveStart_speed="1.5"
+                app:spb_progressiveStop_speed="2.0"
+                app:spb_reversed="false"
+                app:spb_sections_count="4"
+                app:spb_speed="2.0"
+                app:spb_stroke_separator_length="@dimen/_3sdp"
+                app:spb_stroke_width="@dimen/_2sdp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/relative_bottom"
+                android:layout_below="@+id/progress_bar"
+                android:background="@color/table_bg_color"
+                android:paddingTop="@dimen/_5sdp"
+                android:scrollbars="none" />
+
+            <LinearLayout
+                android:id="@+id/relative_bottom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_3sdp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/open_options"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:background="@drawable/ic_circle_blue"
+                    android:padding="@dimen/_5sdp"
+                    app:srcCompat="@drawable/ic_more_horiz" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_3sdp"
+                    android:layout_marginRight="@dimen/_3sdp"
+                    android:background="@drawable/bg_chat_edittext"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/_3sdp">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/messageTextview"
+                        style="@style/EditTextStyle"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:layout_weight="1"
+                        android:background="@color/transparent"
+                        android:hint="@string/hint_type_here"
+                        android:imeOptions="actionSend"
+                        android:maxLines="7"
+                        android:minHeight="@dimen/_32sdp"
+                        android:paddingLeft="@dimen/_14sdp"
+                        android:paddingTop="@dimen/_5sdp"
+                        android:paddingRight="@dimen/_14sdp"
+                        android:paddingBottom="@dimen/_5sdp"
+                        android:singleLine="false"
+                        android:text="@={viewModel.chatMessage}" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/iconsend"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:background="@drawable/ic_circle_blue"
+                        android:onClick="@{viewModel::onSendClicked}"
+                        android:padding="@dimen/_5sdp"
+                        app:srcCompat="@drawable/ic_arrow_upward" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

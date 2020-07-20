@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.app.codesmakers.ui.storedetails.StoredetailVM" />
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_bottom_sheet"
+        android:minHeight="@dimen/_270sdp"
+        android:orientation="vertical"
+        app:behavior_peekHeight="@dimen/_68sdp"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+        <RelativeLayout
+            android:id="@+id/rl_top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/store_iv"
+                android:layout_width="@dimen/medium_icons_size"
+                android:layout_height="@dimen/medium_icons_size" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/store_name_tv"
+                style="@style/Widget.CodeMakers.TextView.Body.Black"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:layout_toEndOf="@+id/store_iv"
+                android:fontFamily="@font/opensans_semibold" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/location_tv"
+                style="@style/Widget.CodeMakers.TextView.Content.Black"
+                android:layout_below="@+id/store_name_tv"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:layout_toEndOf="@+id/store_iv"
+                android:paddingStart="@dimen/_2sdp" />
+
+        </RelativeLayout>
+
+        <androidx.appcompat.widget.AppCompatRatingBar
+            android:id="@+id/rating_bar"
+            style="@style/Widget.AppCompat.RatingBar.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_3sdp"
+            android:layout_marginRight="@dimen/_3sdp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_10sdp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/duration_button"
+            style="@style/Widget.CodeMakers.TextView.Button.Grey"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_3sdp"
+            android:layout_marginRight="@dimen/_3sdp"
+            android:onClick="@{model::onDurationClicked}"
+            android:text="@string/delivery_duration" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_10sdp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/location_button"
+            style="@style/Widget.CodeMakers.TextView.Button.Grey"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_3sdp"
+            android:layout_marginRight="@dimen/_3sdp"
+            android:onClick="@{model::onLocationClicked}"
+            android:text="@string/your_location" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_10sdp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/coupon_button"
+                style="@style/Widget.CodeMakers.TextView.Button.Dialog"
+                android:layout_width="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginLeft="@dimen/_3sdp"
+                android:layout_marginRight="@dimen/_3sdp"
+                android:layout_marginBottom="@dimen/_4sdp"
+                android:onClick="@{model::onCouponClicked}"
+                android:text="@string/coupon" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/code_button"
+                style="@style/Widget.CodeMakers.TextView.Content.Black"
+                android:layout_width="wrap_content"
+                android:textColor="@color/app_tint_color"
+                android:layout_gravity="end"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_alignParentEnd="true"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:text="@{model.newOrderData.couponCode}" />
+        </RelativeLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_15sdp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/next_button"
+            style="@style/Widget.CodeMakers.TextView.Button.Blue"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_3sdp"
+            android:onClick="@{model::onDetailsNextClicked}"
+            android:text="@string/next" />
+
+    </LinearLayout>
+
+</layout>

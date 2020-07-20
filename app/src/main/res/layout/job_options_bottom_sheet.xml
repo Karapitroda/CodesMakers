@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:model="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.app.codesmakers.ui.applycarrier.ApplyVM" />
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_bottom_sheet"
+        android:minHeight="@dimen/_270sdp"
+        android:orientation="vertical"
+        app:behavior_hideable="false"
+        app:behavior_peekHeight="@dimen/_minus1sdp"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/image_store"
+                    android:layout_width="@dimen/_33sdp"
+                    android:layout_height="@dimen/_33sdp"
+                    app:srcCompat="@drawable/ic_store_placeholder"
+                    model:store_pic="@{model.carrierInfo.storePic}" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/store_name_tv"
+                        style="@style/Widget.CodeMakers.TextView.Body.Black"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        android:fontFamily="@font/opensans_semibold"
+                        android:text="@{model.carrierInfo.storeName}" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/store_loc_tv"
+                        style="@style/Widget.CodeMakers.TextView.Content.Grey"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        android:fontFamily="@font/opensans_semibold"
+                        android:text="@{model.carrierInfo.content}" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_15sdp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/call_store_btn"
+            style="@style/Widget.CodeMakers.TextView.Button.Grey"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_3sdp"
+            android:layout_marginRight="@dimen/_3sdp"
+            android:onClick="@{model::onCallStoreClicked}"
+            android:text="@string/call_store" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_10sdp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/call_customer_btn"
+            style="@style/Widget.CodeMakers.TextView.Button.Grey"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_3sdp"
+            android:layout_marginRight="@dimen/_3sdp"
+            android:onClick="@{model::onCallCustomerClicked}"
+            android:text="@string/call_customer" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_10sdp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/chat_customer_btn"
+            style="@style/Widget.CodeMakers.TextView.Button.Grey"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_3sdp"
+            android:layout_marginRight="@dimen/_3sdp"
+
+            android:onClick="@{model::onChatCustomer}"
+            android:text="@string/chat_with_customer" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_20sdp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/post_bill_button"
+            style="@style/Widget.CodeMakers.TextView.Button.yellow"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_3sdp"
+            android:layout_marginRight="@dimen/_3sdp"
+            android:onClick="@{model::onPostBillClicked}"
+            android:text="@string/status_post_bill" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/order_delivered_button"
+            style="@style/Widget.CodeMakers.TextView.Button.Green"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_3sdp"
+            android:layout_marginRight="@dimen/_3sdp"
+            android:onClick="@{model::onOrderDeliveredClicked}"
+            android:text="@string/status_deliver_order" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_20sdp" />
+
+    </LinearLayout>
+
+</layout>

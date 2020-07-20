@@ -1,0 +1,156 @@
+buildscript {
+    repositories {
+        maven { url 'https://plugins.gradle.org/m2/'}
+    }
+    dependencies {
+        classpath 'gradle.plugin.com.onesignal:onesignal-gradle-plugin:0.12.7'
+    }
+}
+apply plugin: 'com.onesignal.androidsdk.onesignal-gradle-plugin'
+
+repositories {
+    maven { url 'https://maven.google.com' }
+}
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 29
+
+    defaultConfig {
+        applicationId "com.app.codesmakers"
+        minSdkVersion 17
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+        multiDexEnabled true
+        manifestPlaceholders = [onesignal_app_id: 'e31ab351-1f28-4424-929f-4b11d22de15f', onesignal_google_project_number: 'REMOTE']
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "BASE_URL", '"http://codesmakers.com"'
+            buildConfigField "String", "API_URL", '"http://codesmakers.com/API/MP/MPS/"'
+        }
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "BASE_URL", '"http://codesmakers.com"'
+            buildConfigField "String", "API_URL", '"http://codesmakers.com/API/MP/MPS/"'
+        }
+
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    flavorDimensions "core"
+    productFlavors {
+        codemakers_first {
+            dimension = 'core'
+            versionCode = 1
+            versionName = '1.0.0'
+            buildConfigField "String", "AppName", '"Taha app"'
+            buildConfigField "String", "AppModelType", '"MPSD"'
+            buildConfigField "String", "AppModelVersion", '"1.0.0"'
+            buildConfigField "String", "API_KEY", '"1b215d177d19d0855aeb0e02c84e6c293c19a66f73aefbce449fd474f11e47f5"'
+            manifestPlaceholders = [applicationLabel: "Taha app"]
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    //AppCompat and designs
+    implementation "androidx.appcompat:appcompat:$androidxAppcompat"
+    implementation "com.google.android.material:material:$androidxLegacy"
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation "androidx.recyclerview:recyclerview:$androidxLegacy"
+    implementation 'androidx.cardview:cardview:1.0.0'
+
+    //Bottom Navigation
+    implementation 'androidx.navigation:navigation-fragment:2.2.1'
+    implementation 'androidx.navigation:navigation-ui:2.2.1'
+
+    //LifeCycle
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+
+    //Multidex
+    implementation 'com.android.support:multidex:1.0.3'
+
+    //Vector Enable
+    implementation "androidx.vectordrawable:vectordrawable:$androidxVector"
+
+    //Retrofit
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation("com.squareup.retrofit2:retrofit:$retrofit") {
+        exclude module: 'okhttp'
+    }
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit"
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.4.1'
+    //implementation 'com.squareup.retrofit2:converter-scalars:2.1.0'
+
+    //RxJava
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.10'
+    implementation 'com.jakewharton.rxbinding3:rxbinding:3.1.0'
+
+    //Animatoo
+    implementation 'com.github.mohammadatif:Animatoo:master'
+
+    //Dimens
+    implementation "com.intuit.sdp:sdp-android:$androidDimens"
+
+    //Picasso
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+    //photview
+    implementation 'com.github.chrisbanes:PhotoView:2.1.3'
+
+    // country code picker
+    implementation 'com.hbb20:ccp:2.3.2'
+
+    //onesignal for push
+    implementation 'com.onesignal:OneSignal:[3.13.0, 3.99.99]'
+
+    //viewpager
+    implementation 'com.github.sembozdemir:ViewPagerArrowIndicator:1.0.0'
+
+    //Permission
+    implementation 'gun0912.ted:tedpermission-rx2:2.2.3'
+    implementation 'gun0912.ted:tedbottompicker:2.0.1'
+
+    //Pager Indicator
+    implementation 'me.relex:circleindicator:2.1.4'
+
+    //Swipe refresh
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0'
+
+    //Progress Indicator
+    implementation 'com.bigkoo:svprogresshud:1.0.6'
+
+    //google services
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
+    implementation 'com.google.android.gms:play-services-location:17.0.0'
+
+    //Log
+    implementation 'com.hypertrack:hyperlog:0.0.10'
+
+    //slider
+    implementation 'com.github.smarteist:autoimageslider:1.3.9-appcompat'
+
+
+    testImplementation 'junit:junit:4.13'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+}

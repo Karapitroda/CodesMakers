@@ -1,0 +1,44 @@
+<resources>
+    <dimen name="text_size_heading">@dimen/_20sdp</dimen>
+    <dimen name="textsize_title">@dimen/_18sdp</dimen>
+    <dimen name="text_size_subtitle">@dimen/_16sdp</dimen>
+    <dimen name="text_size_body">@dimen/_14sdp</dimen>
+    <dimen name="text_size_content">@dimen/_11sdp</dimen>
+    <dimen name="text_size_toolbar">@dimen/_12sdp</dimen>
+    <dimen name="text_size_small">@dimen/_10sdp</dimen>
+    <dimen name="text_size_footnote">@dimen/_9sdp</dimen>
+    <dimen name="text_size_tiny">@dimen/_7sdp</dimen>
+    <dimen name="text_size_button">@dimen/_12sdp</dimen>
+    <dimen name="text_size_button_dialog">@dimen/_12sdp</dimen>
+    <dimen name="height_button_dialog">@dimen/_30sdp</dimen>
+
+    <dimen name="profile_image_size">@dimen/_80sdp</dimen>
+    <dimen name="round_image_size">@dimen/_42sdp</dimen>
+    <dimen name="medium_icons_size">@dimen/_38sdp</dimen>
+    <dimen name="medium_image_size">@dimen/_50sdp</dimen>
+    <dimen name="small_image_size">@dimen/_23sdp</dimen>
+    <dimen name="item_content_padding">@dimen/_8sdp</dimen>
+    <dimen name="user_img_size">@dimen/profile_image_size</dimen>
+    <dimen name="icons_size">@dimen/_33sdp</dimen>
+
+    <!--    <dimen name="app_bar_height">@dimen/_170sdp</dimen>-->
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+    <dimen name="radius_corners">@dimen/_22sdp</dimen>
+
+    <dimen name="speech_bubble_corners">10dp</dimen>
+    <dimen name="speech_bubble_corners_plus_tail">15dp</dimen>
+    <dimen name="speech_bubble_spacing">5dp</dimen>
+    <dimen name="speech_bubble_tail">25dp</dimen>
+    <dimen name="app_bar_height">@dimen/_180sdp</dimen>
+
+    <!--WheelPicker-->
+    <dimen name="WheelItemTextSize">24sp</dimen>
+    <dimen name="WheelItemSpace">12dp</dimen>
+    <dimen name="WheelIndicatorSize">2dp</dimen>
+    <dimen name="WheelMargins">8dp</dimen>
+
+    <!--otp-->
+    <dimen name="type_your_pin_size">35dp</dimen>
+    <dimen name="type_your_pin_margins">7dp</dimen>
+</resources>

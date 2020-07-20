@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/chat_user_bg_color" />
+    <corners
+        android:bottomLeftRadius="@dimen/_18sdp"
+        android:bottomRightRadius="@dimen/_1sdp"
+        android:topLeftRadius="@dimen/_18sdp"
+        android:topRightRadius="@dimen/_18sdp" />
+    <padding
+        android:bottom="@dimen/_5sdp"
+        android:left="@dimen/_10sdp"
+        android:right="@dimen/_18sdp"
+        android:top="@dimen/_5sdp" />
+
+</shape>
